@@ -39,7 +39,7 @@
         </div>
         <div class="form-group" style="float:left; width:50%">
             <label class="control-label" translate="meczyQApp.typ.wynikDruzyna1" for="field_wynikDruzyna1">Wynik Druzyna 1</label>
-            <input type="number" class="form-control" name="wynikDruzyna1" id="field_wynikDruzyna1"
+            <input type="number" class="form-control" name="wynikDruzyna1" id="field_wynikDruzyna1" min="0"
                    ng-model="vm.typ.wynikDruzyna1"
                    required />
             <div ng-show="editForm.wynikDruzyna1.$invalid">
@@ -55,7 +55,7 @@
         </div>
         <div class="form-group" style="float:right; width:50%">
             <label class="control-label" translate="meczyQApp.typ.wynikDruzyna2" for="field_wynikDruzyna2">Wynik Druzyna 2</label>
-            <input type="number" class="form-control" name="wynikDruzyna2" id="field_wynikDruzyna2"
+            <input type="number" class="form-control" name="wynikDruzyna2" id="field_wynikDruzyna2" min="0"
                    ng-model="vm.typ.wynikDruzyna2"
                    required />
             <div ng-show="editForm.wynikDruzyna2.$invalid">

@@ -78,6 +78,8 @@ public class TypServiceImpl implements TypService {
         log.debug("Request to get Typ : {}", id);
         Typ typ = typRepository.findOne(id);
         TypDTO typDTO = typMapper.typToTypDTO(typ);
+        typDTO.setMeczNazwa(typ.getMecz() != null && typ.getMecz().getDruzyna1() != null && typ.getMecz().getDruzyna2() != null ?
+            typ.getMecz().getDruzyna1() + " - " + typ.getMecz().getDruzyna2() : null);
         return typDTO;
     }
 

@@ -4,21 +4,13 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span translate="meczyQApp.typ.imie">Imie</span></dt>
+        <dt><span translate="meczyQApp.typ.imieINazwisko">Imię i nazwisko</span></dt>
         <dd>
-            <span>{{vm.typ.imie}}</span>
+            <span>{{vm.typ.imie}} {{vm.typ.nazwisko}}</span>
         </dd>
-        <dt><span translate="meczyQApp.typ.nazwisko">Nazwisko</span></dt>
+        <dt><span translate="meczyQApp.typ.wynik">Obstawiony wynik</span></dt>
         <dd>
-            <span>{{vm.typ.nazwisko}}</span>
-        </dd>
-        <dt><span translate="meczyQApp.typ.wynikDruzyna1">Wynik Druzyna 1</span></dt>
-        <dd>
-            <span>{{vm.typ.wynikDruzyna1}}</span>
-        </dd>
-        <dt><span translate="meczyQApp.typ.wynikDruzyna2">Wynik Druzyna 2</span></dt>
-        <dd>
-            <span>{{vm.typ.wynikDruzyna2}}</span>
+            <span>{{vm.typ.wynikDruzyna1}} : {{vm.typ.wynikDruzyna2}}</span>
         </dd>
         <dt><span translate="meczyQApp.typ.data">Data</span></dt>
         <dd>
@@ -30,7 +22,7 @@
         </dd>
         <dt><span translate="meczyQApp.typ.mecz">Mecz</span></dt>
         <dd>
-            <a ui-sref="mecz-detail({id:vm.typ.meczId})">{{vm.typ.meczId}}</a>
+            <a ui-sref="mecz-detail({id:vm.typ.meczId})">{{vm.typ.meczNazwa}}</a>
         </dd>
     </dl>
 
