@@ -1,26 +1,26 @@
-
 <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myMeczLabel" translate="meczyQApp.mecz.home.createOrEditLabel">Create or edit a Mecz</h4>
+        <h4 class="modal-title" id="myMeczLabel" translate="meczyQApp.mecz.home.createOrEditLabel">Create or edit a
+            Mecz</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
         <div class="form-group" ng-show="vm.mecz.id">
             <label for="id" translate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.mecz.id" readonly />
+                   ng-model="vm.mecz.id" readonly/>
         </div>
         <div class="form-group">
             <label class="control-label" translate="meczyQApp.mecz.druzyna1" for="field_druzyna1">Druzyna 1</label>
             <input type="text" class="form-control" name="druzyna1" id="field_druzyna1"
-                    ng-model="vm.mecz.druzyna1"
-                    required />
+                   ng-model="vm.mecz.druzyna1"
+                   required/>
             <div ng-show="editForm.druzyna1.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.druzyna1.$error.required" translate="entity.validation.required">
+                   ng-show="editForm.druzyna1.$error.required" translate="entity.validation.required">
                     This field is required.
                 </p>
             </div>
@@ -28,52 +28,62 @@
         <div class="form-group">
             <label class="control-label" translate="meczyQApp.mecz.druzyna2" for="field_druzyna2">Druzyna 2</label>
             <input type="text" class="form-control" name="druzyna2" id="field_druzyna2"
-                    ng-model="vm.mecz.druzyna2"
-                    required />
+                   ng-model="vm.mecz.druzyna2"
+                   required/>
             <div ng-show="editForm.druzyna2.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.druzyna2.$error.required" translate="entity.validation.required">
+                   ng-show="editForm.druzyna2.$error.required" translate="entity.validation.required">
                     This field is required.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" translate="meczyQApp.mecz.wynikDruzyna1" for="field_wynikDruzyna1">Wynik Druzyna 1</label>
-            <input type="number" class="form-control" name="wynikDruzyna1" id="field_wynikDruzyna1"
-                    ng-model="vm.mecz.wynikDruzyna1"
-                     />
+            <label class="control-label" translate="meczyQApp.mecz.wynikDruzyna1" for="field_wynikDruzyna1">Wynik
+                Druzyna 1</label>
+            <input type="number" class="form-control" name="wynikDruzyna1" id="field_wynikDruzyna1" min="0"
+                   ng-model="vm.mecz.wynikDruzyna1"
+            />
         </div>
         <div class="form-group">
-            <label class="control-label" translate="meczyQApp.mecz.wynikDruzyna2" for="field_wynikDruzyna2">Wynik Druzyna 2</label>
-            <input type="number" class="form-control" name="wynikDruzyna2" id="field_wynikDruzyna2"
-                    ng-model="vm.mecz.wynikDruzyna2"
-                     />
+            <label class="control-label" translate="meczyQApp.mecz.wynikDruzyna2" for="field_wynikDruzyna2">Wynik
+                Druzyna 2</label>
+            <input type="number" class="form-control" name="wynikDruzyna2" id="field_wynikDruzyna2" min="0"
+                   ng-model="vm.mecz.wynikDruzyna2"
+            />
         </div>
         <div class="form-group">
             <label class="control-label" translate="meczyQApp.mecz.dataMeczu" for="field_dataMeczu">Data Meczu</label>
-                <div class="input-group">
-                    <input id="field_dataMeczu" type="text" class="form-control" name="dataMeczu" uib-datepicker-popup="{{dateformat}}" ng-model="vm.mecz.dataMeczu" is-open="vm.datePickerOpenStatus.dataMeczu"
-                    />
+            <div class="input-group">
+                <input id="field_dataMeczu" type="text" class="form-control" name="dataMeczu"
+                       uib-datepicker-popup="{{dateformat}}" ng-model="vm.mecz.dataMeczu"
+                       is-open="vm.datePickerOpenStatus.dataMeczu"
+                />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataMeczu')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataMeczu')"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
                     </span>
-                </div>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label" translate="meczyQApp.mecz.dataZamkniecia" for="field_dataZamkniecia">Data Zamkniecia</label>
-                <div class="input-group">
-                    <input id="field_dataZamkniecia" type="text" class="form-control" name="dataZamkniecia" uib-datepicker-popup="{{dateformat}}" ng-model="vm.mecz.dataZamkniecia" is-open="vm.datePickerOpenStatus.dataZamkniecia"
-                    />
+            <label class="control-label" translate="meczyQApp.mecz.dataZamkniecia" for="field_dataZamkniecia">Data
+                Zamkniecia</label>
+            <div class="input-group">
+                <input id="field_dataZamkniecia" type="text" class="form-control" name="dataZamkniecia"
+                       uib-datepicker-popup="{{dateformat}}" ng-model="vm.mecz.dataZamkniecia"
+                       is-open="vm.datePickerOpenStatus.dataZamkniecia"
+                />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataZamkniecia')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataZamkniecia')"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
                     </span>
-                </div>
+            </div>
         </div>
 
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+            translate="entity.action.cancel">Cancel</span>
         </button>
         <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
             <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>

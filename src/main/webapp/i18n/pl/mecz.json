@@ -3,15 +3,15 @@
         "mecz": {
             "home": {
                 "title": "Mecze",
-                "createLabel": "Dodaj Mecz",
-                "createOrEditLabel": "Dodaj lub edytuj: Mecz",
+                "createLabel": "Dodaj mecz",
+                "createOrEditLabel": "Dodaj lub edytuj mecz",
                 "search": "Search for Mecz"
             },
             "created": "A new Mecz is created with identifier {{ param }}",
             "updated": "A Mecz is updated with identifier {{ param }}",
             "deleted": "A Mecz is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Czy na pewno chcesz usunąć Mecz {{ id }}?"
+                "question": "Czy na pewno chcesz usunąć mecz?"
             },
             "detail": {
                 "title": "Mecz"
@@ -23,7 +23,7 @@
             "mecz": "Mecz",
             "wynik": "Wynik",
             "dataMeczu": "Data meczu",
-            "dataZamkniecia": "Data zamknięcia typowania",
+            "dataZamkniecia": "Data końca typowania",
             "typy": "Typy"
         }
     }

@@ -1,22 +1,22 @@
 
 <div>
-    <h2><span translate="meczyQApp.mecz.detail.title">Mecz</span> {{vm.mecz.id}}</h2>
+    <h2> {{vm.mecz.druzyna1}} - {{vm.mecz.druzyna2}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span translate="meczyQApp.mecz.druzyna1">Mecz</span></dt>
+        <dt><span translate="meczyQApp.mecz.mecz">Mecz</span></dt>
         <dd>
-            <span>{{vm.mecz.druzyna1}}</span> <span>{{vm.mecz.druzyna2}}</span>
+            <span>{{vm.mecz.druzyna1}}</span> - <span>{{vm.mecz.druzyna2}}</span>
         </dd>
-        <dt><span translate="meczyQApp.mecz.wynikDruzyna1">Wynik</span></dt>
+        <dt><span translate="meczyQApp.mecz.wynik">Wynik</span></dt>
         <dd>
-            <span>{{vm.mecz.wynikDruzyna1}}</span> <span>{{vm.mecz.wynikDruzyna2}}</span>
+            <span>{{vm.mecz.wynikDruzyna1}}</span> : <span>{{vm.mecz.wynikDruzyna2}}</span>
         </dd>
         <dt><span translate="meczyQApp.mecz.dataMeczu">Data meczu</span></dt>
         <dd>
             <span>{{vm.mecz.dataMeczu | date:'mediumDate'}}</span>
         </dd>
-        <dt><span translate="meczyQApp.mecz.dataZamkniecia">Data zamknięcia typowania</span></dt>
+        <dt><span translate="meczyQApp.mecz.dataZamkniecia">Data końca typowania</span></dt>
         <dd>
             <span>{{vm.mecz.dataZamkniecia | date:'mediumDate'}}</span>
         </dd>
