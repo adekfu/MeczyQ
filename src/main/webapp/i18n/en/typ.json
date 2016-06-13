@@ -1,0 +1,28 @@
+{
+    "meczyQApp": {
+        "typ" : {
+            "home": {
+                "title": "Typs",
+                "createLabel": "Create a new Typ",
+                "createOrEditLabel": "Create or edit a Typ",
+                "search": "Search for Typ"
+            },
+            "created": "A new Typ is created with identifier {{ param }}",
+            "updated": "A Typ is updated with identifier {{ param }}",
+            "deleted": "A Typ is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Typ {{ id }}?"
+            },
+            "detail": {
+                "title": "Typ"
+            },
+            "imie": "Imie",
+            "nazwisko": "Nazwisko",
+            "wynikDruzyna1": "Wynik Druzyna 1",
+            "wynikDruzyna2": "Wynik Druzyna 2",
+            "data": "Data",
+            "dataEdycji": "Data Edycji",
+            "mecz": "Mecz"
+        }
+    }
+}

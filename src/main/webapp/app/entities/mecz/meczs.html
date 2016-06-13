@@ -1,0 +1,70 @@
+<div>
+    <h2 translate="meczyQApp.mecz.home.title">Meczs</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="mecz.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="meczyQApp.mecz.home.createLabel">
+                        Create new Mecz
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="druzyna1"><span translate="meczyQApp.mecz.druzyna1">Druzyna 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="druzyna2"><span translate="meczyQApp.mecz.druzyna2">Druzyna 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="wynikDruzyna1"><span translate="meczyQApp.mecz.wynikDruzyna1">Wynik Druzyna 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="wynikDruzyna2"><span translate="meczyQApp.mecz.wynikDruzyna2">Wynik Druzyna 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataMeczu"><span translate="meczyQApp.mecz.dataMeczu">Data Meczu</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataZamkniecia"><span translate="meczyQApp.mecz.dataZamkniecia">Data Zamkniecia</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="mecz in vm.meczs track by mecz.id">
+                    <td><a ui-sref="mecz-detail({id:mecz.id})">{{mecz.id}}</a></td>
+                    <td>{{mecz.druzyna1}}</td>
+                    <td>{{mecz.druzyna2}}</td>
+                    <td>{{mecz.wynikDruzyna1}}</td>
+                    <td>{{mecz.wynikDruzyna2}}</td>
+                        <td>{{mecz.dataMeczu | date:'mediumDate'}}</td>
+                        <td>{{mecz.dataZamkniecia | date:'mediumDate'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="mecz-detail({id:mecz.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="mecz.edit({id:mecz.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="mecz.delete({id:mecz.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

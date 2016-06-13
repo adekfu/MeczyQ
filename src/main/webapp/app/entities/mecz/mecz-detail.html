@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="meczyQApp.mecz.detail.title">Mecz</span> {{vm.mecz.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="meczyQApp.mecz.druzyna1">Druzyna 1</span></dt>
+        <dd>
+            <span>{{vm.mecz.druzyna1}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.mecz.druzyna2">Druzyna 2</span></dt>
+        <dd>
+            <span>{{vm.mecz.druzyna2}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.mecz.wynikDruzyna1">Wynik Druzyna 1</span></dt>
+        <dd>
+            <span>{{vm.mecz.wynikDruzyna1}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.mecz.wynikDruzyna2">Wynik Druzyna 2</span></dt>
+        <dd>
+            <span>{{vm.mecz.wynikDruzyna2}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.mecz.dataMeczu">Data Meczu</span></dt>
+        <dd>
+            <span>{{vm.mecz.dataMeczu | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.mecz.dataZamkniecia">Data Zamkniecia</span></dt>
+        <dd>
+            <span>{{vm.mecz.dataZamkniecia | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

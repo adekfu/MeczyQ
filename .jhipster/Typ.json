@@ -1,0 +1,59 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "mecz",
+            "otherEntityName": "mecz",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "imie",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nazwisko",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "wynikDruzyna1",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "wynikDruzyna2",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataEdycji",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160613133642",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "typ",
+    "pagination": "pager"
+}

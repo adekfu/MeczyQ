@@ -1,0 +1,47 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "typy",
+            "otherEntityName": "typ",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "mecz"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "druzyna1",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "druzyna2",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "wynikDruzyna1",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "wynikDruzyna2",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dataMeczu",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataZamkniecia",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160613133205",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "mecz",
+    "pagination": "pager"
+}

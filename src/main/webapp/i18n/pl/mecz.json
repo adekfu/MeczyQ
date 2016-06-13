@@ -1,0 +1,28 @@
+{
+    "meczyQApp": {
+        "mecz" : {
+            "home": {
+                "title": "Meczs",
+                "createLabel": "Dodaj Mecz",
+                "createOrEditLabel": "Dodaj lub edytuj: Mecz",
+                "search": "Search for Mecz"
+            },
+            "created": "A new Mecz is created with identifier {{ param }}",
+            "updated": "A Mecz is updated with identifier {{ param }}",
+            "deleted": "A Mecz is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Mecz {{ id }}?"
+            },
+            "detail": {
+                "title": "Mecz"
+            },
+            "druzyna1": "Druzyna 1",
+            "druzyna2": "Druzyna 2",
+            "wynikDruzyna1": "Wynik Druzyna 1",
+            "wynikDruzyna2": "Wynik Druzyna 2",
+            "dataMeczu": "Data Meczu",
+            "dataZamkniecia": "Data Zamkniecia",
+            "typy": "Typy"
+        }
+    }
+}

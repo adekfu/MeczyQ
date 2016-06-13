@@ -1,0 +1,116 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTypLabel" translate="meczyQApp.typ.home.createOrEditLabel">Create or edit a Typ</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.typ.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.typ.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="meczyQApp.typ.imie" for="field_imie">Imie</label>
+            <input type="text" class="form-control" name="imie" id="field_imie"
+                    ng-model="vm.typ.imie"
+                    required />
+            <div ng-show="editForm.imie.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.imie.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="meczyQApp.typ.nazwisko" for="field_nazwisko">Nazwisko</label>
+            <input type="text" class="form-control" name="nazwisko" id="field_nazwisko"
+                    ng-model="vm.typ.nazwisko"
+                    required />
+            <div ng-show="editForm.nazwisko.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nazwisko.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="meczyQApp.typ.wynikDruzyna1" for="field_wynikDruzyna1">Wynik Druzyna 1</label>
+            <input type="number" class="form-control" name="wynikDruzyna1" id="field_wynikDruzyna1"
+                    ng-model="vm.typ.wynikDruzyna1"
+                    required />
+            <div ng-show="editForm.wynikDruzyna1.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.wynikDruzyna1.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.wynikDruzyna1.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="meczyQApp.typ.wynikDruzyna2" for="field_wynikDruzyna2">Wynik Druzyna 2</label>
+            <input type="text" class="form-control" name="wynikDruzyna2" id="field_wynikDruzyna2"
+                    ng-model="vm.typ.wynikDruzyna2"
+                    required />
+            <div ng-show="editForm.wynikDruzyna2.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.wynikDruzyna2.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="meczyQApp.typ.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" uib-datepicker-popup="{{dateformat}}" ng-model="vm.typ.data" is-open="vm.datePickerOpenStatus.data"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.data.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.data.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="meczyQApp.typ.dataEdycji" for="field_dataEdycji">Data Edycji</label>
+                <div class="input-group">
+                    <input id="field_dataEdycji" type="text" class="form-control" name="dataEdycji" uib-datepicker-popup="{{dateformat}}" ng-model="vm.typ.dataEdycji" is-open="vm.datePickerOpenStatus.dataEdycji"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataEdycji')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="meczyQApp.typ.mecz" for="field_mecz">Mecz</label>
+            <select class="form-control" id="field_mecz" name="mecz" ng-model="vm.typ.meczId" ng-options="mecz.id as mecz.id for mecz in vm.meczs"             required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.mecz.$invalid">
+            <p class="help-block"
+                ng-show="editForm.mecz.$error.required" translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

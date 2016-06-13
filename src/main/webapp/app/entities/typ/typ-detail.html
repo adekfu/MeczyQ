@@ -1,0 +1,42 @@
+
+<div>
+    <h2><span translate="meczyQApp.typ.detail.title">Typ</span> {{vm.typ.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="meczyQApp.typ.imie">Imie</span></dt>
+        <dd>
+            <span>{{vm.typ.imie}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.typ.nazwisko">Nazwisko</span></dt>
+        <dd>
+            <span>{{vm.typ.nazwisko}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.typ.wynikDruzyna1">Wynik Druzyna 1</span></dt>
+        <dd>
+            <span>{{vm.typ.wynikDruzyna1}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.typ.wynikDruzyna2">Wynik Druzyna 2</span></dt>
+        <dd>
+            <span>{{vm.typ.wynikDruzyna2}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.typ.data">Data</span></dt>
+        <dd>
+            <span>{{vm.typ.data | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.typ.dataEdycji">Data Edycji</span></dt>
+        <dd>
+            <span>{{vm.typ.dataEdycji | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="meczyQApp.typ.mecz">Mecz</span></dt>
+        <dd>
+            <a ui-sref="mecz-detail({id:vm.typ.meczId})">{{vm.typ.meczId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
