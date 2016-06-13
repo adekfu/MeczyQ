@@ -2,7 +2,7 @@
     "meczyQApp": {
         "typ" : {
             "home": {
-                "title": "Typs",
+                "title": "Typy",
                 "createLabel": "Dodaj Typ",
                 "createOrEditLabel": "Dodaj lub edytuj: Typ",
                 "search": "Search for Typ"
@@ -16,10 +16,10 @@
             "detail": {
                 "title": "Typ"
             },
-            "imie": "Imie",
+            "imie": "Imię",
             "nazwisko": "Nazwisko",
-            "wynikDruzyna1": "Wynik Druzyna 1",
-            "wynikDruzyna2": "Wynik Druzyna 2",
+            "wynikDruzyna1": "Wynik Drużyna 1",
+            "wynikDruzyna2": "Wynik Drużyna 2",
             "data": "Data",
             "dataEdycji": "Data Edycji",
             "mecz": "Mecz"

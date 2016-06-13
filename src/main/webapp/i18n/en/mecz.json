@@ -2,7 +2,7 @@
     "meczyQApp": {
         "mecz" : {
             "home": {
-                "title": "Meczs",
+                "title": "Mecze",
                 "createLabel": "Create a new Mecz",
                 "createOrEditLabel": "Create or edit a Mecz",
                 "search": "Search for Mecz"
@@ -21,7 +21,7 @@
             "wynikDruzyna1": "Wynik Druzyna 1",
             "wynikDruzyna2": "Wynik Druzyna 2",
             "dataMeczu": "Data Meczu",
-            "dataZamkniecia": "Data Zamkniecia",
+            "dataZamkniecia": "Data zamknięcia typowania",
             "typy": "Typy"
         }
     }

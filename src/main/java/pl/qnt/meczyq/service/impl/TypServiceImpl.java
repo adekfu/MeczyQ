@@ -13,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,50 +25,55 @@ import java.util.stream.Collectors;
  */
 @Service
 @Transactional
-public class TypServiceImpl implements TypService{
+public class TypServiceImpl implements TypService {
 
     private final Logger log = LoggerFactory.getLogger(TypServiceImpl.class);
-    
+
     @Inject
     private TypRepository typRepository;
-    
+
     @Inject
     private TypMapper typMapper;
-    
+
     /**
      * Save a typ.
-     * 
+     *
      * @param typDTO the entity to save
      * @return the persisted entity
      */
     public TypDTO save(TypDTO typDTO) {
         log.debug("Request to save Typ : {}", typDTO);
         Typ typ = typMapper.typDTOToTyp(typDTO);
+        if (typ.getId() == null) {
+            typ.setData(Instant.ofEpochMilli(Calendar.getInstance().getTime().getTime()).atZone(ZoneId.systemDefault()).toLocalDate());
+        } else {
+            typ.setDataEdycji(Instant.ofEpochMilli(Calendar.getInstance().getTime().getTime()).atZone(ZoneId.systemDefault()).toLocalDate());
+        }
         typ = typRepository.save(typ);
         TypDTO result = typMapper.typToTypDTO(typ);
         return result;
     }
 
     /**
-     *  Get all the typs.
-     *  
-     *  @param pageable the pagination information
-     *  @return the list of entities
+     * Get all the typs.
+     *
+     * @param pageable the pagination information
+     * @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public Page<Typ> findAll(Pageable pageable) {
         log.debug("Request to get all Typs");
-        Page<Typ> result = typRepository.findAll(pageable); 
+        Page<Typ> result = typRepository.findAll(pageable);
         return result;
     }
 
     /**
-     *  Get one typ by id.
+     * Get one typ by id.
      *
-     *  @param id the id of the entity
-     *  @return the entity
+     * @param id the id of the entity
+     * @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public TypDTO findOne(Long id) {
         log.debug("Request to get Typ : {}", id);
         Typ typ = typRepository.findOne(id);
@@ -74,9 +82,9 @@ public class TypServiceImpl implements TypService{
     }
 
     /**
-     *  Delete the  typ by id.
-     *  
-     *  @param id the id of the entity
+     * Delete the  typ by id.
+     *
+     * @param id the id of the entity
      */
     public void delete(Long id) {
         log.debug("Request to delete Typ : {}", id);

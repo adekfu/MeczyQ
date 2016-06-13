@@ -1,8 +1,8 @@
 {
     "meczyQApp": {
-        "mecz" : {
+        "mecz": {
             "home": {
-                "title": "Meczs",
+                "title": "Mecze",
                 "createLabel": "Dodaj Mecz",
                 "createOrEditLabel": "Dodaj lub edytuj: Mecz",
                 "search": "Search for Mecz"
@@ -16,12 +16,14 @@
             "detail": {
                 "title": "Mecz"
             },
-            "druzyna1": "Druzyna 1",
-            "druzyna2": "Druzyna 2",
-            "wynikDruzyna1": "Wynik Druzyna 1",
-            "wynikDruzyna2": "Wynik Druzyna 2",
-            "dataMeczu": "Data Meczu",
-            "dataZamkniecia": "Data Zamkniecia",
+            "druzyna1": "Drużyna 1",
+            "druzyna2": "Drużyna 2",
+            "wynikDruzyna1": "Wynik drużyna 1",
+            "wynikDruzyna2": "Wynik drużyna 2",
+            "mecz": "Mecz",
+            "wynik": "Wynik",
+            "dataMeczu": "Data meczu",
+            "dataZamkniecia": "Data zamknięcia typowania",
             "typy": "Typy"
         }
     }

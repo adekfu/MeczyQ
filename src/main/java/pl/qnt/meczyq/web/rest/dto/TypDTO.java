@@ -25,16 +25,16 @@ public class TypDTO implements Serializable {
     private Integer wynikDruzyna1;
 
     @NotNull
-    private String wynikDruzyna2;
+    private Integer wynikDruzyna2;
 
-    @NotNull
+
     private LocalDate data;
 
     private LocalDate dataEdycji;
 
 
     private Long meczId;
-    
+
     public Long getId() {
         return id;
     }
@@ -63,13 +63,15 @@ public class TypDTO implements Serializable {
     public void setWynikDruzyna1(Integer wynikDruzyna1) {
         this.wynikDruzyna1 = wynikDruzyna1;
     }
-    public String getWynikDruzyna2() {
+
+    public Integer getWynikDruzyna2() {
         return wynikDruzyna2;
     }
 
-    public void setWynikDruzyna2(String wynikDruzyna2) {
+    public void setWynikDruzyna2(Integer wynikDruzyna2) {
         this.wynikDruzyna2 = wynikDruzyna2;
     }
+
     public LocalDate getData() {
         return data;
     }

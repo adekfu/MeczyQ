@@ -2,7 +2,7 @@
     "meczyQApp": {
         "typ" : {
             "home": {
-                "title": "Typs",
+                "title": "Typy",
                 "createLabel": "Create a new Typ",
                 "createOrEditLabel": "Create or edit a Typ",
                 "search": "Search for Typ"
