@@ -6,6 +6,16 @@
         },
         "messages": {
             "validate": {
+                "firstname": {
+                    "required": "Twoje imię jest wymagany.",
+                    "minlength": "Twoje imię musi mieć długość co najmniej 1 znaku",
+                    "maxlength": "Twoje imię nie może być dłuższy niż 50 znaków"
+                },
+                "lastname": {
+                    "required": "Twoje nazwisko jest wymagany.",
+                    "minlength": "Twoje nazwisko musi mieć długość co najmniej 1 znaku",
+                    "maxlength": "Twoje nazwisko nie może być dłuższy niż 50 znaków"
+                },
                 "login": {
                     "required": "Twój login jest wymagany.",
                     "minlength": "Twój login musi mieć długość co najmniej 1 znaku",
