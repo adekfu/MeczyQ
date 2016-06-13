@@ -35,6 +35,8 @@ public class TypDTO implements Serializable {
 
     private Long meczId;
 
+    private String meczNazwa;
+
     public Long getId() {
         return id;
     }
@@ -114,6 +116,14 @@ public class TypDTO implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    public String getMeczNazwa() {
+        return meczNazwa;
+    }
+
+    public void setMeczNazwa(String meczNazwa) {
+        this.meczNazwa = meczNazwa;
     }
 
     @Override

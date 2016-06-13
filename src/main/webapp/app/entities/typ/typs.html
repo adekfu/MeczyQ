@@ -18,11 +18,9 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="imie"><span translate="meczyQApp.typ.imie">Imie</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="nazwisko"><span translate="meczyQApp.typ.nazwisko">Nazwisko</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="wynikDruzyna1"><span translate="meczyQApp.typ.wynikDruzyna1">Wynik Druzyna 1</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="wynikDruzyna2"><span translate="meczyQApp.typ.wynikDruzyna2">Wynik Druzyna 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="wynikDruzyna2"><span translate="meczyQApp.typ.wynik">Wynik</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="data"><span translate="meczyQApp.typ.data">Data</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dataEdycji"><span translate="meczyQApp.typ.dataEdycji">Data Edycji</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="meczId"><span translate="meczyQApp.typ.mecz">Mecz</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -31,15 +29,13 @@
             </thead>
             <tbody>
                 <tr ng-repeat="typ in vm.typs track by typ.id">
-                    <td><a ui-sref="typ-detail({id:typ.id})">{{typ.id}}</a></td>
                     <td>{{typ.imie}}</td>
                     <td>{{typ.nazwisko}}</td>
-                    <td>{{typ.wynikDruzyna1}}</td>
-                    <td>{{typ.wynikDruzyna2}}</td>
+                    <td>{{typ.wynikDruzyna1}} - {{typ.wynikDruzyna2}}</td>
                         <td>{{typ.data | date:'mediumDate'}}</td>
                         <td>{{typ.dataEdycji | date:'mediumDate'}}</td>
                     <td>
-                        <a ui-sref="mecz-detail({id:typ.meczId})">{{typ.meczId}}</a>
+                        <a ui-sref="mecz-detail({id:typ.meczId})">{{typ.meczNazwa}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
