@@ -1,5 +1,6 @@
 package pl.qnt.meczyq.service.impl;
 
+import pl.qnt.meczyq.domain.Mecz;
 import pl.qnt.meczyq.domain.User;
 import pl.qnt.meczyq.repository.UserRepository;
 import pl.qnt.meczyq.security.SecurityUtils;
@@ -18,10 +19,7 @@ import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.time.ZoneId;
-import java.util.Calendar;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -108,5 +106,56 @@ public class TypServiceImpl implements TypService {
     public void delete(Long id) {
         log.debug("Request to delete Typ : {}", id);
         typRepository.delete(id);
+    }
+
+    public void stworzWyniki() {
+        Map<Long, Integer> mapaWynikow = new HashMap<>();
+        List<Typ> typy = typRepository.znajdzWszystkieZWynikiem();
+
+        for (Typ typ : typy) {
+            Mecz mecz = typ.getMecz();
+            if (typ.getUser() != null && mecz != null && mecz.getWynikDruzyna1() != null && mecz.getWynikDruzyna2() != null &&
+                typ.getWynikDruzyna1() != null && typ.getWynikDruzyna2() != null) {
+
+                Integer wynik = obliczWynik(mecz.getWynikDruzyna1(), mecz.getWynikDruzyna2(), typ.getWynikDruzyna1(), typ.getWynikDruzyna2());
+
+                if (mapaWynikow.containsKey(typ.getUser().getId())) {
+                    mapaWynikow.put(typ.getUser().getId(), mapaWynikow.get(typ.getUser().getId()) + wynik);
+                } else {
+                    mapaWynikow.put(typ.getUser().getId(), wynik);
+                }
+
+            }
+        }
+    }
+
+    private Integer obliczWynik(Integer wynik1, Integer wynik2, Integer typWynik1, Integer typWynik2) {
+        boolean typRemis = typWynik1.equals(typWynik2);
+        boolean typWygrana1 = typWynik1 > typWynik2;
+
+        boolean wynikRemis = wynik1.equals(wynik2);
+        boolean wynikWygrana1 = wynik1 > wynik2;
+
+        boolean trafionyWynik1 = wynik1.equals(typWynik1);
+        boolean trafionyWynik2 = wynik2.equals(typWynik2);
+
+        if (wynikRemis && typRemis) {
+            if (trafionyWynik1 && trafionyWynik2) {
+                return 3;
+            } else
+                return 1;
+        } else if (wynikWygrana1 && typWygrana1) {
+            if (trafionyWynik1 && trafionyWynik2) {
+                return 3;
+            } else
+                return 1;
+        } else if (!wynikWygrana1 && !typWygrana1) {
+            if (trafionyWynik1 && trafionyWynik2) {
+                return 3;
+            } else
+                return 1;
+        } else {
+            return 0;
+        }
     }
 }
