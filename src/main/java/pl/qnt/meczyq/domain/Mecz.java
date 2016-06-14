@@ -44,7 +44,6 @@ public class Mecz implements Serializable {
     private LocalDate dataZamkniecia;
 
     @OneToMany(mappedBy = "mecz")
-    @JsonIgnore
     private Set<Typ> typies = new HashSet<>();
 
     public Long getId() {

@@ -32,11 +32,13 @@ public class TypDTO implements Serializable {
 
     private LocalDate dataEdycji;
 
+    private String meczNazwa;
+
 
     private Long meczId;
-    
+
     private Long userId;
-    
+
     public Long getId() {
         return id;
     }
@@ -135,5 +137,13 @@ public class TypDTO implements Serializable {
             ", data='" + data + "'" +
             ", dataEdycji='" + dataEdycji + "'" +
             '}';
+    }
+
+    public String getMeczNazwa() {
+        return meczNazwa;
+    }
+
+    public void setMeczNazwa(String meczNazwa) {
+        this.meczNazwa = meczNazwa;
     }
 }
