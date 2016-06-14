@@ -120,7 +120,7 @@ public class Mecz implements Serializable {
             return false;
         }
         Mecz mecz = (Mecz) o;
-        if(mecz.id == null || id == null) {
+        if (mecz.id == null || id == null) {
             return false;
         }
         return Objects.equals(id, mecz.id);
@@ -142,5 +142,11 @@ public class Mecz implements Serializable {
             ", dataMeczu='" + dataMeczu + "'" +
             ", dataZamkniecia='" + dataZamkniecia + "'" +
             '}';
+    }
+
+    public String getNazwaMeczu() {
+        if (druzyna1 != null && druzyna2 != null) {
+            return druzyna1 + " - " + druzyna2;
+        } else return "";
     }
 }

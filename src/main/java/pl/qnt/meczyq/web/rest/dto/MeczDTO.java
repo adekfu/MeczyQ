@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.Objects;
 
@@ -28,6 +29,8 @@ public class MeczDTO implements Serializable {
     private LocalDate dataMeczu;
 
     private LocalDate dataZamkniecia;
+
+    private List<TypDTO> typy;
 
 
     public Long getId() {
@@ -112,5 +115,13 @@ public class MeczDTO implements Serializable {
             ", dataMeczu='" + dataMeczu + "'" +
             ", dataZamkniecia='" + dataZamkniecia + "'" +
             '}';
+    }
+
+    public List<TypDTO> getTypy() {
+        return typy;
+    }
+
+    public void setTypy(List<TypDTO> typy) {
+        this.typy = typy;
     }
 }
