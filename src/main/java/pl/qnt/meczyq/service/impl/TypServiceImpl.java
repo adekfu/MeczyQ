@@ -111,20 +111,21 @@ public class TypServiceImpl implements TypService {
     public void stworzWyniki() {
         Map<Long, Integer> mapaWynikow = new HashMap<>();
         List<Typ> typy = typRepository.znajdzWszystkieZWynikiem();
+        if (typy != null && typy.size() > 0) {
+            for (Typ typ : typy) {
+                Mecz mecz = typ.getMecz();
+                if (typ.getUser() != null && mecz != null && mecz.getWynikDruzyna1() != null && mecz.getWynikDruzyna2() != null &&
+                    typ.getWynikDruzyna1() != null && typ.getWynikDruzyna2() != null) {
 
-        for (Typ typ : typy) {
-            Mecz mecz = typ.getMecz();
-            if (typ.getUser() != null && mecz != null && mecz.getWynikDruzyna1() != null && mecz.getWynikDruzyna2() != null &&
-                typ.getWynikDruzyna1() != null && typ.getWynikDruzyna2() != null) {
+                    Integer wynik = obliczWynik(mecz.getWynikDruzyna1(), mecz.getWynikDruzyna2(), typ.getWynikDruzyna1(), typ.getWynikDruzyna2());
 
-                Integer wynik = obliczWynik(mecz.getWynikDruzyna1(), mecz.getWynikDruzyna2(), typ.getWynikDruzyna1(), typ.getWynikDruzyna2());
+                    if (mapaWynikow.containsKey(typ.getUser().getId())) {
+                        mapaWynikow.put(typ.getUser().getId(), mapaWynikow.get(typ.getUser().getId()) + wynik);
+                    } else {
+                        mapaWynikow.put(typ.getUser().getId(), wynik);
+                    }
 
-                if (mapaWynikow.containsKey(typ.getUser().getId())) {
-                    mapaWynikow.put(typ.getUser().getId(), mapaWynikow.get(typ.getUser().getId()) + wynik);
-                } else {
-                    mapaWynikow.put(typ.getUser().getId(), wynik);
                 }
-
             }
         }
     }
