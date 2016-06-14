@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="mecz"/>
 
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="typ"
+                                 constraintName="fk_typ_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
     </changeSet>
 </databaseChangeLog>

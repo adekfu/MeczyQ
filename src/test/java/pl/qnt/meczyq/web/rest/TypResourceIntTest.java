@@ -53,8 +53,8 @@ public class TypResourceIntTest {
 
     private static final Integer DEFAULT_WYNIK_DRUZYNA_1 = 1;
     private static final Integer UPDATED_WYNIK_DRUZYNA_1 = 2;
-    private static final Integer DEFAULT_WYNIK_DRUZYNA_2 = 3;
-    private static final Integer UPDATED_WYNIK_DRUZYNA_2 = 4;
+    private static final String DEFAULT_WYNIK_DRUZYNA_2 = "AAAAA";
+    private static final String UPDATED_WYNIK_DRUZYNA_2 = "BBBBB";
 
     private static final LocalDate DEFAULT_DATA = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DATA = LocalDate.now(ZoneId.systemDefault());

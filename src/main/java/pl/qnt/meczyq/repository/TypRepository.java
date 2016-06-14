@@ -12,4 +12,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface TypRepository extends JpaRepository<Typ,Long> {
 
+    @Query("select typ from Typ typ where typ.user.login = ?#{principal.username}")
+    List<Typ> findByUserIsCurrentUser();
+
 }

@@ -35,13 +35,13 @@ import java.util.stream.Collectors;
 public class TypResource {
 
     private final Logger log = LoggerFactory.getLogger(TypResource.class);
-
+        
     @Inject
     private TypService typService;
-
+    
     @Inject
     private TypMapper typMapper;
-
+    
     /**
      * POST  /typs : Create a new typ.
      *
@@ -103,21 +103,9 @@ public class TypResource {
     public ResponseEntity<List<TypDTO>> getAllTyps(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Typs");
-        Page<Typ> page = typService.findAll(pageable);
-
+        Page<Typ> page = typService.findAll(pageable); 
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/typs");
-
-        List<TypDTO> dtos = typMapper.typsToTypDTOs(page.getContent());
-        for (TypDTO dto : dtos) {
-            for (Typ typ : page) {
-                if (dto.getId().equals(typ.getId())) {
-                    dto.setMeczNazwa(typ.getMecz() != null && typ.getMecz().getDruzyna1() != null && typ.getMecz().getDruzyna2() != null ?
-                        typ.getMecz().getDruzyna1() + " - " + typ.getMecz().getDruzyna2() : "");
-                    break;
-                }
-            }
-        }
-        return new ResponseEntity<>(dtos, headers, HttpStatus.OK);
+        return new ResponseEntity<>(typMapper.typsToTypDTOs(page.getContent()), headers, HttpStatus.OK);
     }
 
     /**

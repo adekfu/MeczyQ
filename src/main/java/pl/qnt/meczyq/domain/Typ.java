@@ -34,7 +34,7 @@ public class Typ implements Serializable {
 
     @NotNull
     @Column(name = "wynik_druzyna_2", nullable = false)
-    private Integer wynikDruzyna2;
+    private String wynikDruzyna2;
 
     @NotNull
     @Column(name = "data", nullable = false)
@@ -46,6 +46,10 @@ public class Typ implements Serializable {
     @ManyToOne
     @NotNull
     private Mecz mecz;
+
+    @ManyToOne
+    @NotNull
+    private User user;
 
     public Long getId() {
         return id;
@@ -79,11 +83,11 @@ public class Typ implements Serializable {
         this.wynikDruzyna1 = wynikDruzyna1;
     }
 
-    public Integer getWynikDruzyna2() {
+    public String getWynikDruzyna2() {
         return wynikDruzyna2;
     }
 
-    public void setWynikDruzyna2(Integer wynikDruzyna2) {
+    public void setWynikDruzyna2(String wynikDruzyna2) {
         this.wynikDruzyna2 = wynikDruzyna2;
     }
 
@@ -109,6 +113,14 @@ public class Typ implements Serializable {
 
     public void setMecz(Mecz mecz) {
         this.mecz = mecz;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

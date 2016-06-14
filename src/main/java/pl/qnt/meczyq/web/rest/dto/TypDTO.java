@@ -25,18 +25,18 @@ public class TypDTO implements Serializable {
     private Integer wynikDruzyna1;
 
     @NotNull
-    private Integer wynikDruzyna2;
+    private String wynikDruzyna2;
 
-
+    @NotNull
     private LocalDate data;
 
     private LocalDate dataEdycji;
 
 
     private Long meczId;
-
-    private String meczNazwa;
-
+    
+    private Long userId;
+    
     public Long getId() {
         return id;
     }
@@ -65,15 +65,13 @@ public class TypDTO implements Serializable {
     public void setWynikDruzyna1(Integer wynikDruzyna1) {
         this.wynikDruzyna1 = wynikDruzyna1;
     }
-
-    public Integer getWynikDruzyna2() {
+    public String getWynikDruzyna2() {
         return wynikDruzyna2;
     }
 
-    public void setWynikDruzyna2(Integer wynikDruzyna2) {
+    public void setWynikDruzyna2(String wynikDruzyna2) {
         this.wynikDruzyna2 = wynikDruzyna2;
     }
-
     public LocalDate getData() {
         return data;
     }
@@ -97,6 +95,14 @@ public class TypDTO implements Serializable {
         this.meczId = meczId;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -116,14 +122,6 @@ public class TypDTO implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
-    }
-
-    public String getMeczNazwa() {
-        return meczNazwa;
-    }
-
-    public void setMeczNazwa(String meczNazwa) {
-        this.meczNazwa = meczNazwa;
     }
 
     @Override
