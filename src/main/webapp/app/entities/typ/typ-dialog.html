@@ -8,30 +8,6 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group">
-            <label class="control-label" translate="meczyQApp.typ.imie" for="field_imie">Imie</label>
-            <input type="text" class="form-control" name="imie" id="field_imie"
-                   ng-model="vm.typ.imie"
-                   required />
-            <div ng-show="editForm.imie.$invalid">
-                <p class="help-block"
-                   ng-show="editForm.imie.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="meczyQApp.typ.nazwisko" for="field_nazwisko">Nazwisko</label>
-            <input type="text" class="form-control" name="nazwisko" id="field_nazwisko"
-                   ng-model="vm.typ.nazwisko"
-                   required />
-            <div ng-show="editForm.nazwisko.$invalid">
-                <p class="help-block"
-                   ng-show="editForm.nazwisko.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
         <div class="form-group" style="float:left; width:50%">
             <label class="control-label" translate="meczyQApp.typ.wynikDruzyna1" for="field_wynikDruzyna1">Wynik Druzyna 1</label>
             <input type="number" class="form-control" name="wynikDruzyna1" id="field_wynikDruzyna1" min="0"

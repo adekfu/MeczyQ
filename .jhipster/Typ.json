@@ -43,7 +43,7 @@
         },
         {
             "fieldName": "wynikDruzyna2",
-            "fieldType": "String",
+            "fieldType": "Integer",
             "fieldValidateRules": [
                 "required"
             ]

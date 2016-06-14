@@ -34,7 +34,7 @@ public class Typ implements Serializable {
 
     @NotNull
     @Column(name = "wynik_druzyna_2", nullable = false)
-    private String wynikDruzyna2;
+    private Integer wynikDruzyna2;
 
     @NotNull
     @Column(name = "data", nullable = false)
@@ -50,6 +50,9 @@ public class Typ implements Serializable {
     @ManyToOne
     @NotNull
     private User user;
+
+    @Transient
+    private String meczNazwa;
 
     public Long getId() {
         return id;
@@ -83,11 +86,11 @@ public class Typ implements Serializable {
         this.wynikDruzyna1 = wynikDruzyna1;
     }
 
-    public String getWynikDruzyna2() {
+    public Integer getWynikDruzyna2() {
         return wynikDruzyna2;
     }
 
-    public void setWynikDruzyna2(String wynikDruzyna2) {
+    public void setWynikDruzyna2(Integer wynikDruzyna2) {
         this.wynikDruzyna2 = wynikDruzyna2;
     }
 
@@ -154,5 +157,13 @@ public class Typ implements Serializable {
             ", data='" + data + "'" +
             ", dataEdycji='" + dataEdycji + "'" +
             '}';
+    }
+
+    public String getMeczNazwa() {
+        return meczNazwa;
+    }
+
+    public void setMeczNazwa(String meczNazwa) {
+        this.meczNazwa = meczNazwa;
     }
 }
